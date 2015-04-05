@@ -4,14 +4,20 @@
 		<div class="panel panel-default">
 			<div class="panel-heading"><h3>Login</h3></div>
 			<div class="panel-body">
-				<form>
-					<input type="email" name="username" class="form-control" placeholder="Email"/>
+				<form method="post">
+					<input type="email" ng-model="user.username" name="username" class="form-control" placeholder="Email"/>
 					<br/>
-					<input type="password" name="password" class="form-control" placeholder="Password" />
+					<input type="password" ng-model="user.password" name="password" class="form-control" placeholder="Password" />
 					<br/>
-					<input type="submit" value="Login" class="btn btn-success btn-block"/>
+					<input type="submit" ng-click="login()" value="Login" class="btn btn-success btn-block"/>
 				</form>
 			</div>
+		</div>
+		<div class="alert alert-danger" ng-if="err">
+			<span ng-bind="err_msg"></span>
+		</div>
+		<div class="alert alert-success" ng-if="success">
+			<span ng-bind="success_msg"></span>
 		</div>
 	</div>
 </div>
