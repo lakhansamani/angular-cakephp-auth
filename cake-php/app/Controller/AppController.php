@@ -31,4 +31,16 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	public $components=array('Auth');
+	public function beforeFilter(){
+      
+
+        //Logged In user variables
+        $this->set('isLoggedIn',$this->Auth->loggedIn());
+    }
+    public function isAuthorized($user) {
+        // Here is where we should verify the role and give access based on role
+        
+        return true;
+    }
 }
