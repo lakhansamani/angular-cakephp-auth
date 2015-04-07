@@ -7,4 +7,5 @@ app.config(function($routeProvider){
     }
   );
 });
+app.constant('API_URL', 'http://localhost/angular-cakephp-auth/cake-php');
 angular.module('auth-app.controllers',[]);
